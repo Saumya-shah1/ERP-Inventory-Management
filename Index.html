@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Inventory Dashboard</h2>
+<p><b>Total Inventory Value:</b> ₹{{ total_value }}</p>
+<table border="1" cellpadding="8">
+  <tr><th>Name</th><th>Category</th><th>Price</th><th>Quantity</th></tr>
+  {% for p in products %}
+  <tr>
+    <td>{{ p.name }}</td>
+    <td>{{ p.category }}</td>
+    <td>₹{{ p.price }}</td>
+    <td>{{ p.quantity }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{{ url_for('add_product') }}">Add Product</a> | 
+<a href="{{ url_for('add_order') }}">Create Order</a>
+{% endblock %}
