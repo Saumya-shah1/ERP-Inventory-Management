@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Create Order</h2>
+<form method="POST">
+  Product: 
+  <select name="product_id">
+    {% for p in products %}
+      <option value="{{ p.id }}">{{ p.name }}</option>
+    {% endfor %}
+  </select><br><br>
+  Quantity: <input type="number" name="quantity"><br><br>
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}
